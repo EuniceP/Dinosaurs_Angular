@@ -1,0 +1,93 @@
+h1 {
+	font-size: 4em;
+	text-align: center;
+}
+
+.changeTitle {
+	height: 30px;
+	text-align: center;
+}
+.newTask {
+	height: 30px;
+	width: 150px;
+	font-size: 14px;
+	text-align: left;
+	margin: 10px 0 0 0;
+	padding: 0px 0 0 10px;
+}
+
+#container {
+	width: 960px;
+	height: 460px;
+	margin: 0 auto;
+	margin-top: 30px;
+
+}
+#dinosaur {
+	background:url("images/trex.png") no-repeat;
+	width: 600px;
+	height: 460px;
+	background-size: cover;
+	float: left;
+}
+/*Task List Box*/
+/*-------------*/
+#appmain {
+	height: 450px;
+	width: 320px;
+	float: left;
+	margin-left: 0px;
+	border: 5px solid black;
+	border-left: none;
+	padding: 0px 10px;
+	overflow: scroll;
+}
+
+.taskForm {
+	border: 3px dashed lightgrey;
+	padding: 10px 10px 10px 10px;
+}
+/*Task List Style*/
+ul {
+	list-style: none;
+}
+li {
+	height:30px;
+	padding:10px 0 0 0;
+	margin-left: 0px;
+}
+li:hover {
+	background-color: lightgray;
+}
+
+.checkbox {
+	margin: 0 10px;
+	outline: none;
+}
+.done {
+	text-decoration: line-through;
+	color: gray;
+}
+.btn-add {
+	background-color:yellow;
+	width:35px;
+}
+.btn-delete {
+	float: right;
+	margin-right: 5px;
+	border-radius: 50%;
+	background-color:white;
+	border: 1px solid #F04A2A;
+	color: #F04A2A;
+	width: 25px;
+	height: 25px;
+	padding: 0 0 3px 0px;
+}
+.progress {
+	text-align: center;
+	color: black;
+	visibility:visible;
+}
+.progress-hidden {
+	visibility:hidden;
+}

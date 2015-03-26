@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Startup our AngularJS App -->
+<html ng-app="JurassicApp">
+  <head>
+    <title>Jurassic Park To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="main.js"></script>
+    <script src="parkController.js"></script>
+  </head>
+
+  <!-- Bring in our ParkController (defined in main.js) -->
+  <body ng-controller="ParkController as main">
+    <!-- DYNAMIC TITLE using ng-model -->
+    <div class="changeTitle">
+      <input type="text" placeholder={{main.greeting}} ng-model="main.greeting">
+      </input>
+    </div>
+    <h1 ng-model="main.greeting">{{main.greeting}}</h1>
+
+
+    <div id="container">
+      <!-- Dinosaur image -->
+      <div id="dinosaur"></div>
+      <!-- Task list box -->
+      <div id="appmain" >
+        
+        <!-- Input box for new task -->
+        <form ng-submit="main.todoAdd()">
+          <div><b>Enter new task: </b>
+          
+            <input class="newTask" type="text" placeholder={{main.task}} ng-model="main.todoText"></input>
+            <button class="btn btn-add" ng-click="main.todoAdd">Add</button>
+         </div>
+        </form>
+
+        <!-- List tasks -->
+        <ul class="taskForm">
+          <li ng-repeat="todo in main.todos">
+
+            <input class="checkbox" type="checkbox" ng-model="todo.done" ng-click="main.calculateTasks($index)"></input>
+            <!-- Task - Line-through text_decoration when todo.done is true/checked -->
+            <span ng-class="{done: todo.done}">
+              {{todo.task}}
+            </span>
+            <!-- Task List Delete button -->
+            <button class="btn btn-delete" ng-click="main.todoDelete($index)">x</button>
+          </li>
+        </ul>
+
+        <!-- Show Progress: "Remaining Tasks is visible only when there is at least 1 task" -->
+        <div class="progress">
+           <span ng-class="{progress-hidden: main.noTasks}">Remaining Tasks: {{main.taskCount}}</span>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
