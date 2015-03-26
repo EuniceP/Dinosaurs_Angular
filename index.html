@@ -50,9 +50,11 @@
    <!-- Show Progress: "Remaining Tasks is visible only when there is at least 1 task" -->
       <span class="progress-hidden">this should be invisible</span>
         <div class="progress" >
-           <span ng-class="{progress-hidden: main.noTasks}">Remaining Tasks: {{main.taskCount}} noTasks:{{main.noTasks}}</span>
+           <!-- The following does not work -->
+         <!--   <span ng-class="{progress-hidden: main.noTasks}">Remaining Tasks: {{main.taskCount}} noTasks:{{main.noTasks}}</span> -->
+           <span ng-show="main.todos.length > 0">Remaining Tasks: {{main.taskCount}}</span>
         </div>
-     
+    
       </div>
 
     </div>
