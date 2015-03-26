@@ -85,9 +85,10 @@ li:hover {
 }
 .progress {
 	text-align: center;
-	color: black;
+	color: blue;
 	visibility:visible;
 }
 .progress-hidden {
-	visibility:hidden;
+	/*visibility:hidden;*/
+	display: none;
 }

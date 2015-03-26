@@ -30,21 +30,30 @@ function parkController() {
     if (!self.todos[$index].done) 
       self.taskCount -= 1;
     self.todos.splice($index,1);
+    setNoTasks();
    }
 
   function todoAdd(){
     self.todos.push({task: self.todoText, done:false});
     self.todoText = null;
     self.taskCount += 1;
+    setNoTasks();
   }
 
   function calculateTasks($index) {
     //self.taskCount = (self.todos.length;
-    if (self.todos[$index].done) 
-      self.taskCount -= 1;
-    else
+    if (self.todos[$index].done) {
+      self.taskCount -= 1; 
+    }
+    else {
       self.taskCount += 1;
-    self.noTasks  = (self.taskcount==0 ? true : false);
+    }
+    setNoTasks();
+  }
+
+   function setNoTasks () {
+      self.noTasks = ((self.taskCount === 0) ? true : false);
    }
+   
   
 }
